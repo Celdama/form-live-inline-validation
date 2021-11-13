@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 a {
@@ -21,10 +22,44 @@ a {
   background-color: #fff;
   width: 80%;
   height: 86%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #app #container .form-wrapper {
-  outline: 1px solid green;
+  padding: 16px;
   width: 50%;
+}
+#app #container .form-wrapper nav {
+  display: flex;
+  justify-content: center;
+  padding: 28px 0;
+}
+#app #container .form-wrapper nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+}
+#app #container .form-wrapper nav ul .logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+#app #container .form-wrapper nav ul .logo-wrapper .point-blue {
+  color: #4780ef;
+  font-weight: bold;
+}
+#app #container .form-wrapper nav ul li .circle-blue {
+  height: 25px;
+  width: 25px;
+  border-radius: 12.5px;
+  background-color: #4780ef;
+  margin-right: 8px;
+}
+#app #container .form-wrapper nav ul li a.logo {
+  color: #000;
+}
+#app #container .form-wrapper nav ul li a {
+  color: #a5b2b9;
 }
 #app #container .img-wrapper {
   position: relative;
@@ -33,6 +68,7 @@ a {
   background-size: cover;
   width: 50%;
   overflow: hidden;
+  border-radius: 12px;
 }
 #app #container .img-wrapper .custom-shape-divider-top-1636789823 {
   position: absolute;
