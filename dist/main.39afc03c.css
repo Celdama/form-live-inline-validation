@@ -26,17 +26,19 @@ a {
 }
 #app #container .form-wrapper {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
   width: 50%;
 }
 #app #container .form-wrapper nav {
   display: flex;
   justify-content: center;
-  padding: 28px 0;
+  padding: 28px 12px 28px 6px;
 }
 #app #container .form-wrapper nav ul {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   list-style: none;
   align-items: center;
 }
@@ -60,6 +62,43 @@ a {
 }
 #app #container .form-wrapper nav ul li a {
   color: #a5b2b9;
+}
+#app #container .form-wrapper .form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+#app #container .form-wrapper .form-content .form-header {
+  padding-left: 36px;
+}
+#app #container .form-wrapper .form-content .form-header .header-info {
+  color: #a5b2b9;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#app #container .form-wrapper .form-content .form-header .header-title {
+  font-size: 52px;
+  padding: 22px 0;
+}
+#app #container .form-wrapper .form-content .form-header .header-title .point-blue {
+  color: #4780ef;
+}
+#app #container .form-wrapper .form-content .form-header .header-question {
+  color: #a5b2b9;
+}
+#app #container .form-wrapper .form-content .form-header .header-question button {
+  border: none;
+  background: none;
+  color: #4780ef;
+  font-size: 16px;
+}
+#app #container .form-wrapper .form-content .form-header .header-question button:hover {
+  cursor: pointer;
+}
+#app #container .form-wrapper .form-content .form {
+  height: 60%;
+  padding: 36px;
 }
 #app #container .img-wrapper {
   position: relative;

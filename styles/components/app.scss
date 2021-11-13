@@ -15,17 +15,20 @@
 
     .form-wrapper {
       padding: 16px;
+      display: flex;
+      flex-direction: column;
+      // outline: 1px solid red;
       width: 50%;
 
       nav {
         display: flex;
         justify-content: center;
-        padding: 28px 0;
+        padding: 28px 12px 28px 6px;
 
         ul {
           width: 100%;
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           list-style: none;
           align-items: center;
 
@@ -55,6 +58,53 @@
               color: $color-gray-nav;
             }
           }
+        }
+      }
+      .form-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        .form-header {
+          // height: 120px;
+          padding-left: 36px;
+
+          .header-info {
+            color: $color-gray-nav;
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+
+          .header-title {
+            font-size: 52px;
+            padding: 22px 0;
+
+            .point-blue {
+              color: $color-blue-logo;
+            }
+          }
+
+          .header-question {
+            color: $color-gray-nav;
+
+            button {
+              border: none;
+              background: none;
+              color: $color-blue-logo;
+              font-size: 16px;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .form {
+          // background-color: peachpuff;
+          height: 60%;
+          padding: 36px;
         }
       }
     }
