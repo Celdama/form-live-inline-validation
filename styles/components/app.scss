@@ -7,7 +7,7 @@
 
   #container {
     display: flex;
-    border-radius: $border-radius-default;
+    border-radius: $border-radius-md;
     background-color: $color-white-default;
     width: 1152px;
     height: 700px;
@@ -34,7 +34,7 @@
       background-size: cover;
       width: 50%;
       overflow: hidden;
-      border-radius: $border-radius-default;
+      border-radius: $border-radius-md;
     }
   }
 }

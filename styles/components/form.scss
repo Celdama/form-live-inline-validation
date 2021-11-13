@@ -13,8 +13,8 @@
       .first-name-wrapper,
       .last-name-wrapper {
         display: flex;
-        background-color: #f2f6fb;
-        border-radius: 16px;
+        background-color: $color-gray-background-input;
+        border-radius: $border-radius-lg;
         padding: 8px 18px;
         align-items: center;
         justify-content: space-between;
@@ -23,14 +23,14 @@
         .first-name-content-form,
         .last-name-content-form {
           label {
-            font-size: 14px;
+            font-size: $font-size-label;
             color: $color-gray-nav;
             padding-left: 3px;
           }
 
           input {
             font-weight: 600;
-            font-size: 18px;
+            font-size: $font-size-input;
             width: 80%;
             margin-top: 4px;
             border: none;
@@ -39,7 +39,7 @@
 
             &:focus {
               outline: 2px solid $color-blue-logo;
-              border-radius: 5px;
+              border-radius: $border-radius-sm;
               background-color: $color-white-default;
             }
           }
@@ -52,11 +52,12 @@
       display: flex;
       justify-content: space-between;
       margin-top: 18px;
-      background-color: #f2f6fb;
-      border-radius: 16px;
+      background-color: $color-gray-background-input;
+      border-radius: $border-radius-lg;
       padding: 8px 18px;
       align-items: center;
       width: 100%;
+
       .email-content-form,
       .password-content-form {
         display: flex;
@@ -64,36 +65,36 @@
         width: 90%;
 
         label {
-          font-size: 14px;
+          font-size: $font-size-label;
           padding-left: 3px;
           color: $color-gray-nav;
         }
 
         input {
           font-weight: 600;
-          font-size: 18px;
+          font-size: $font-size-input;
           width: 100%;
           margin-top: 4px;
           border: none;
-          background-color: transparent;
+          background: none;
           padding: 3px;
 
           &:focus {
             outline: 2px solid $color-blue-logo;
             background-color: $color-white-default;
-            border-radius: 5px;
+            border-radius: $border-radius-sm;
           }
         }
       }
     }
 
     .button-wrapper {
-      background-color: white;
+      background-color: $color-white-default;
       padding: 0;
 
       .change-method-btn {
         color: $color-gray-nav;
-        background-color: #f2f6fb;
+        background-color: $color-gray-background-input;
       }
 
       .create-account-btn {
@@ -104,7 +105,7 @@
       button {
         width: 47%;
         padding: 20px 16px;
-        border-radius: 25px;
+        border-radius: $border-radius-xl;
         border: none;
 
         &:hover {

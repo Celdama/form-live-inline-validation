@@ -93,7 +93,7 @@ a {
 .form form .full-name-wrapper .last-name-wrapper .first-name-content-form input:focus,
 .form form .full-name-wrapper .last-name-wrapper .last-name-content-form input:focus {
   outline: 2px solid #4780ef;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #fff;
 }
 .form form .email-wrapper,
@@ -139,7 +139,7 @@ a {
   width: 100%;
   margin-top: 4px;
   border: none;
-  background-color: transparent;
+  background: none;
   padding: 3px;
 }
 .form form .email-wrapper .email-content-form input:focus,
@@ -150,10 +150,10 @@ a {
 .form form .button-wrapper .password-content-form input:focus {
   outline: 2px solid #4780ef;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 .form form .button-wrapper {
-  background-color: white;
+  background-color: #fff;
   padding: 0;
 }
 .form form .button-wrapper .change-method-btn {
@@ -167,7 +167,7 @@ a {
 .form form .button-wrapper button {
   width: 47%;
   padding: 20px 16px;
-  border-radius: 25px;
+  border-radius: 26px;
   border: none;
 }
 .form form .button-wrapper button:hover {
