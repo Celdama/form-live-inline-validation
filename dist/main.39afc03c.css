@@ -8,4 +8,51 @@ a {
   text-decoration: none;
 }
 
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eaeff2;
+}
+#app #container {
+  display: flex;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 80%;
+  height: 86%;
+}
+#app #container .form-wrapper {
+  outline: 1px solid green;
+  width: 50%;
+}
+#app #container .img-wrapper {
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80");
+  background-position: center center;
+  background-size: cover;
+  width: 50%;
+  overflow: hidden;
+}
+#app #container .img-wrapper .custom-shape-divider-top-1636789823 {
+  position: absolute;
+  top: 146px;
+  left: -40%;
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+  line-height: 0;
+  transform: rotate(90deg);
+  width: 130%;
+}
+#app #container .img-wrapper .custom-shape-divider-top-1636789823 svg {
+  position: relative;
+  display: block;
+  width: calc(106% + 1.3px);
+  height: 350px;
+}
+#app #container .img-wrapper .custom-shape-divider-top-1636789823 .shape-fill {
+  fill: #fff;
+}
+
 /*# sourceMappingURL=/main.39afc03c.css.map */
