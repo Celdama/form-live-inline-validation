@@ -189,7 +189,7 @@ nav ul .logo-wrapper {
   display: flex;
   align-items: center;
 }
-nav ul .logo-wrapper .point-blue {
+nav ul .logo-wrapper .blue-dot {
   color: #4780ef;
   font-weight: bold;
 }
@@ -219,7 +219,7 @@ nav ul li a {
   font-size: 52px;
   padding: 22px 0;
 }
-.form-header .header-title .point-blue {
+.form-header .header-title .blue-dot {
   color: #4780ef;
 }
 .form-header .header-question {
