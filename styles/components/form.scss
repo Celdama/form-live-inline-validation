@@ -1,0 +1,120 @@
+.form {
+  // background-color: peachpuff;
+  height: 60%;
+  padding: 36px;
+
+  form {
+    // outline: 1px solid red;
+    display: flex;
+    flex-direction: column;
+
+    .full-name-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .first-name-wrapper,
+      .last-name-wrapper {
+        display: flex;
+        background-color: #f2f6fb;
+        border-radius: 16px;
+        padding: 8px 18px;
+        align-items: center;
+        justify-content: space-between;
+        // flex-direction: column;
+        width: 47%;
+
+        .first-name-content-form,
+        .last-name-content-form {
+          label {
+            font-size: 14px;
+            color: $color-gray-nav;
+            padding-left: 3px;
+          }
+
+          input {
+            font-weight: 600;
+            font-size: 18px;
+            width: 80%;
+            margin-top: 4px;
+            border: none;
+            background-color: transparent;
+            padding: 3px;
+
+            &:focus {
+              outline: 2px solid $color-blue-logo;
+              border-radius: 5px;
+              background-color: $color-white-default;
+            }
+          }
+        }
+      }
+    }
+    .email-wrapper,
+    .password-wrapper,
+    .button-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      background-color: #f2f6fb;
+      border-radius: 16px;
+      padding: 8px 18px;
+      align-items: center;
+      width: 100%;
+      .email-content-form,
+      .password-content-form {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        label {
+          font-size: 14px;
+          padding-left: 3px;
+          color: $color-gray-nav;
+        }
+
+        input {
+          font-weight: 600;
+          font-size: 18px;
+          width: 100%;
+          margin-top: 4px;
+          border: none;
+          background-color: transparent;
+          padding: 3px;
+
+          &:focus {
+            outline: 2px solid $color-blue-logo;
+            background-color: $color-white-default;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+    .button-wrapper {
+      // outline: 1px solid red;
+      background-color: white;
+      padding: 0;
+
+      .change-method-btn {
+        color: $color-gray-nav;
+        background-color: #f2f6fb;
+      }
+
+      .create-account-btn {
+        color: $color-white-default;
+        background-color: $color-blue-logo;
+      }
+
+      button {
+        width: 47%;
+        padding: 20px 16px;
+        border-radius: 25px;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

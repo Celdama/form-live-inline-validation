@@ -20,8 +20,8 @@ a {
   display: flex;
   border-radius: 12px;
   background-color: #fff;
-  width: 80%;
-  height: 86%;
+  width: 1152px;
+  height: 700px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 #app #container .form-wrapper {
@@ -96,10 +96,6 @@ a {
 #app #container .form-wrapper .form-content .form-header .header-question button:hover {
   cursor: pointer;
 }
-#app #container .form-wrapper .form-content .form {
-  height: 60%;
-  padding: 36px;
-}
 #app #container .img-wrapper {
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80");
@@ -128,6 +124,134 @@ a {
 }
 #app #container .img-wrapper .custom-shape-divider-top-1636789823 .shape-fill {
   fill: #fff;
+}
+
+.form {
+  height: 60%;
+  padding: 36px;
+}
+.form form {
+  display: flex;
+  flex-direction: column;
+}
+.form form .full-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.form form .full-name-wrapper .first-name-wrapper,
+.form form .full-name-wrapper .last-name-wrapper {
+  display: flex;
+  background-color: #f2f6fb;
+  border-radius: 16px;
+  padding: 8px 18px;
+  align-items: center;
+  justify-content: space-between;
+  width: 47%;
+}
+.form form .full-name-wrapper .first-name-wrapper .first-name-content-form label,
+.form form .full-name-wrapper .first-name-wrapper .last-name-content-form label,
+.form form .full-name-wrapper .last-name-wrapper .first-name-content-form label,
+.form form .full-name-wrapper .last-name-wrapper .last-name-content-form label {
+  font-size: 14px;
+  color: #a5b2b9;
+  padding-left: 3px;
+}
+.form form .full-name-wrapper .first-name-wrapper .first-name-content-form input,
+.form form .full-name-wrapper .first-name-wrapper .last-name-content-form input,
+.form form .full-name-wrapper .last-name-wrapper .first-name-content-form input,
+.form form .full-name-wrapper .last-name-wrapper .last-name-content-form input {
+  font-weight: 600;
+  font-size: 18px;
+  width: 80%;
+  margin-top: 4px;
+  border: none;
+  background-color: transparent;
+  padding: 3px;
+}
+.form form .full-name-wrapper .first-name-wrapper .first-name-content-form input:focus,
+.form form .full-name-wrapper .first-name-wrapper .last-name-content-form input:focus,
+.form form .full-name-wrapper .last-name-wrapper .first-name-content-form input:focus,
+.form form .full-name-wrapper .last-name-wrapper .last-name-content-form input:focus {
+  outline: 2px solid #4780ef;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.form form .email-wrapper,
+.form form .password-wrapper,
+.form form .button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  background-color: #f2f6fb;
+  border-radius: 16px;
+  padding: 8px 18px;
+  align-items: center;
+  width: 100%;
+}
+.form form .email-wrapper .email-content-form,
+.form form .email-wrapper .password-content-form,
+.form form .password-wrapper .email-content-form,
+.form form .password-wrapper .password-content-form,
+.form form .button-wrapper .email-content-form,
+.form form .button-wrapper .password-content-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.form form .email-wrapper .email-content-form label,
+.form form .email-wrapper .password-content-form label,
+.form form .password-wrapper .email-content-form label,
+.form form .password-wrapper .password-content-form label,
+.form form .button-wrapper .email-content-form label,
+.form form .button-wrapper .password-content-form label {
+  font-size: 14px;
+  padding-left: 3px;
+  color: #a5b2b9;
+}
+.form form .email-wrapper .email-content-form input,
+.form form .email-wrapper .password-content-form input,
+.form form .password-wrapper .email-content-form input,
+.form form .password-wrapper .password-content-form input,
+.form form .button-wrapper .email-content-form input,
+.form form .button-wrapper .password-content-form input {
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 4px;
+  border: none;
+  background-color: transparent;
+  padding: 3px;
+}
+.form form .email-wrapper .email-content-form input:focus,
+.form form .email-wrapper .password-content-form input:focus,
+.form form .password-wrapper .email-content-form input:focus,
+.form form .password-wrapper .password-content-form input:focus,
+.form form .button-wrapper .email-content-form input:focus,
+.form form .button-wrapper .password-content-form input:focus {
+  outline: 2px solid #4780ef;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.form form .button-wrapper {
+  background-color: white;
+  padding: 0;
+}
+.form form .button-wrapper .change-method-btn {
+  color: #a5b2b9;
+  background-color: #f2f6fb;
+}
+.form form .button-wrapper .create-account-btn {
+  color: #fff;
+  background-color: #4780ef;
+}
+.form form .button-wrapper button {
+  width: 47%;
+  padding: 20px 16px;
+  border-radius: 25px;
+  border: none;
+}
+.form form .button-wrapper button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=/main.39afc03c.css.map */
