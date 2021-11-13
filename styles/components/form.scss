@@ -1,10 +1,8 @@
 .form {
-  // background-color: peachpuff;
   height: 60%;
   padding: 36px;
 
   form {
-    // outline: 1px solid red;
     display: flex;
     flex-direction: column;
 
@@ -20,7 +18,6 @@
         padding: 8px 18px;
         align-items: center;
         justify-content: space-between;
-        // flex-direction: column;
         width: 47%;
 
         .first-name-content-form,
@@ -91,7 +88,6 @@
     }
 
     .button-wrapper {
-      // outline: 1px solid red;
       background-color: white;
       padding: 0;
 

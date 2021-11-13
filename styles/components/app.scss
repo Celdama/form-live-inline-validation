@@ -19,86 +19,11 @@
       flex-direction: column;
       width: 50%;
 
-      nav {
-        display: flex;
-        justify-content: center;
-        padding: 28px 12px 28px 6px;
-
-        ul {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          list-style: none;
-          align-items: center;
-
-          .logo-wrapper {
-            display: flex;
-            align-items: center;
-
-            .point-blue {
-              color: $color-blue-logo;
-              font-weight: bold;
-            }
-          }
-
-          li {
-            .circle-blue {
-              height: 25px;
-              width: 25px;
-              border-radius: 12.5px;
-              background-color: $color-blue-logo;
-              margin-right: 8px;
-            }
-
-            a.logo {
-              color: $color-black-default;
-            }
-            a {
-              color: $color-gray-nav;
-            }
-          }
-        }
-      }
       .form-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 100%;
-
-        .form-header {
-          // height: 120px;
-          padding-left: 36px;
-
-          .header-info {
-            color: $color-gray-nav;
-            text-transform: uppercase;
-            font-weight: bold;
-          }
-
-          .header-title {
-            font-size: 52px;
-            padding: 22px 0;
-
-            .point-blue {
-              color: $color-blue-logo;
-            }
-          }
-
-          .header-question {
-            color: $color-gray-nav;
-
-            button {
-              border: none;
-              background: none;
-              color: $color-blue-logo;
-              font-size: 16px;
-
-              &:hover {
-                cursor: pointer;
-              }
-            }
-          }
-        }
       }
     }
 
@@ -110,29 +35,6 @@
       width: 50%;
       overflow: hidden;
       border-radius: $border-radius-default;
-
-      .custom-shape-divider-top-1636789823 {
-        position: absolute;
-        top: 146px;
-        left: -40%;
-        width: 100%;
-        overflow: hidden;
-        height: 400px;
-        line-height: 0;
-        transform: rotate(90deg);
-        width: 130%;
-      }
-
-      .custom-shape-divider-top-1636789823 svg {
-        position: relative;
-        display: block;
-        width: calc(106% + 1.3px);
-        height: 350px;
-      }
-
-      .custom-shape-divider-top-1636789823 .shape-fill {
-        fill: $color-white-default;
-      }
     }
   }
 }

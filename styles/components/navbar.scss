@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 28px 12px 28px 6px;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+
+      .point-blue {
+        color: $color-blue-logo;
+        font-weight: bold;
+      }
+    }
+
+    li {
+      .circle-blue {
+        height: 25px;
+        width: 25px;
+        border-radius: 12.5px;
+        background-color: $color-blue-logo;
+        margin-right: 8px;
+      }
+
+      a.logo {
+        color: $color-black-default;
+      }
+      a {
+        color: $color-gray-nav;
+      }
+    }
+  }
+}
