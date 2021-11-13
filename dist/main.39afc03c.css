@@ -42,7 +42,8 @@ a {
   background-size: cover;
   width: 50%;
   overflow: hidden;
-  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .form {
@@ -237,8 +238,8 @@ nav ul li a {
 
 .custom-shape-divider-top-1636789823 {
   position: absolute;
-  top: 146px;
-  left: -40%;
+  top: 172px;
+  left: -56%;
   width: 100%;
   overflow: hidden;
   height: 400px;
@@ -249,8 +250,8 @@ nav ul li a {
 .custom-shape-divider-top-1636789823 svg {
   position: relative;
   display: block;
-  width: calc(106% + 1.3px);
-  height: 350px;
+  width: calc(116% + 1.3px);
+  height: 330px;
 }
 .custom-shape-divider-top-1636789823 .shape-fill {
   fill: #fff;

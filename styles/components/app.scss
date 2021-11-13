@@ -33,7 +33,8 @@
       background-size: cover;
       width: 50%;
       overflow: hidden;
-      border-radius: $border-radius-md;
+      border-top-right-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
     }
   }
 }
