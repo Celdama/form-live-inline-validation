@@ -1,3 +1,5 @@
+import Icons from './utilities/iconSvg';
+
 const FormValidation = (() => {
   const form = document.querySelector('form');
   const inputs = Array.from(document.querySelectorAll('input'));
@@ -29,11 +31,16 @@ const FormValidation = (() => {
   };
 
   const firstNameInputValidity = () => {
+    const { validInput, invalidInput } = Icons;
+
     firstName.addEventListener('input', () => {
       if (firstName.validity.valid) {
         firstNameError.textContent = '';
         firstNameError.className = 'error';
+        firstName.parentNode.parentNode.children[1].innerHTML = `${validInput()}`;
       } else {
+        firstName.parentNode.parentNode.children[1].innerHTML = `${invalidInput()}`;
+
         showError(firstName, firstNameError);
       }
     });

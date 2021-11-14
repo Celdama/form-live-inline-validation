@@ -117,7 +117,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"utilities/iconSvg.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var Icons = function () {
+  var validInput = function validInput() {
+    return "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" fill=\"#43aa8b\" class=\"bi bi-check-circle\" viewBox=\"0 0 16 16\">\n      <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      <path d=\"M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z\"/>\n    </svg>\n  ";
+  };
+
+  var invalidInput = function invalidInput() {
+    return "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" fill=\"#e63946\" class=\"bi bi-x-circle\" viewBox=\"0 0 16 16\">\n      <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      <path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\"/>\n    </svg>\n  ";
+  };
+
+  return {
+    validInput: validInput,
+    invalidInput: invalidInput
+  };
+}();
+
+var _default = Icons;
+exports.default = _default;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _iconSvg = _interopRequireDefault(require("./utilities/iconSvg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var FormValidation = function () {
   var form = document.querySelector('form');
   var inputs = Array.from(document.querySelectorAll('input'));
@@ -147,11 +178,15 @@ var FormValidation = function () {
   };
 
   var firstNameInputValidity = function firstNameInputValidity() {
+    var validInput = _iconSvg.default.validInput,
+        invalidInput = _iconSvg.default.invalidInput;
     firstName.addEventListener('input', function () {
       if (firstName.validity.valid) {
         firstNameError.textContent = '';
         firstNameError.className = 'error';
+        firstName.parentNode.parentNode.children[1].innerHTML = "".concat(validInput());
       } else {
+        firstName.parentNode.parentNode.children[1].innerHTML = "".concat(invalidInput());
         showError(firstName, firstNameError);
       }
     });
@@ -176,7 +211,7 @@ var FormValidation = function () {
 FormValidation.wrapperEffectOnInputFocus();
 FormValidation.firstNameInputValidity();
 FormValidation.formListener();
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./utilities/iconSvg":"utilities/iconSvg.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -204,7 +239,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52615" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53991" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
