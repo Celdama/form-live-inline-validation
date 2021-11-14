@@ -9,6 +9,15 @@ a {
   text-decoration: none;
 }
 
+.focus {
+  outline: 2px solid #4780ef;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff !important;
+}
+.focus label {
+  color: #4780ef !important;
+}
+
 #app {
   display: flex;
   justify-content: center;
@@ -92,9 +101,7 @@ a {
 .form form .full-name-wrapper .first-name-wrapper .last-name-content-form input:focus,
 .form form .full-name-wrapper .last-name-wrapper .first-name-content-form input:focus,
 .form form .full-name-wrapper .last-name-wrapper .last-name-content-form input:focus {
-  outline: 2px solid #4780ef;
-  border-radius: 6px;
-  background-color: #fff;
+  outline: none;
 }
 .form form .email-wrapper,
 .form form .password-wrapper,
@@ -148,9 +155,7 @@ a {
 .form form .password-wrapper .password-content-form input:focus,
 .form form .button-wrapper .email-content-form input:focus,
 .form form .button-wrapper .password-content-form input:focus {
-  outline: 2px solid #4780ef;
-  background-color: #fff;
-  border-radius: 6px;
+  outline: none;
 }
 .form form .button-wrapper {
   background-color: #fff;

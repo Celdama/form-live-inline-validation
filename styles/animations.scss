@@ -1,1 +1,12 @@
 // keyframes animations
+
+// event listener animations
+.focus {
+  outline: 2px solid $color-blue-logo;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: #fff !important;
+
+  label {
+    color: $color-blue-logo !important;
+  }
+}
