@@ -41,9 +41,15 @@
                   <div class="first-name-wrapper">
                     <div class="first-name-content-form">
                       <label for="firstName">First name</label>
-                      <input type="text" name="firstName" id="firstName" required minlength="4"/>
+                      <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        autocomplete="off"
+                        required
+                        minlength="4"
+                      />
                       <span class="error" aria-live="polite"></span>
-
                     </div>
                     <div class="first-name-icon">
                       <svg
@@ -62,14 +68,19 @@
                         />
                       </svg>
                     </div>
-                    
                   </div>
                   <div class="last-name-wrapper">
                     <div class="last-name-content-form">
                       <label for="lastName">Last name</label>
-                      <input type="text" name="lastName" id="lastName" />
-                      <span  class="error" aria-live="polite"></span>
-
+                      <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        required
+                        minlength="3"
+                        autocomplete="off"
+                      />
+                      <span class="error" aria-live="polite"></span>
                     </div>
                     <div class="last-name-icon">
                       <svg
@@ -94,7 +105,14 @@
                 <div class="email-wrapper">
                   <div class="email-content-form">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" />
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      autocomplete="off"
+                      required
+                    />
+                    <span class="error" aria-live="polite"></span>
                   </div>
                   <div class="email-icon">
                     <svg
@@ -115,7 +133,15 @@
                 <div class="password-wrapper">
                   <div class="password-content-form">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" />
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      autocomplete="off"
+                      required
+                      minlength="6"
+                    />
+                    <span class="error" aria-live="polite"></span>
                   </div>
                   <div class="password-icon">
                     <svg
@@ -136,13 +162,18 @@
 
                 <div class="button-wrapper">
                   <button class="change-method-btn">Change method</button>
-                  <button class="create-account-btn" type="submit">Create account</button>
+                  <button class="create-account-btn" type="submit">
+                    Create account
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <div class="img-wrapper" style="background-image: url('./img/background.jpeg');">
+        <div
+          class="img-wrapper"
+          style="background-image: url('./img/background.jpeg')"
+        >
           <div class="custom-shape-divider-top-1636789823">
             <svg
               data-name="Layer 1"

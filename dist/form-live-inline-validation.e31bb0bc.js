@@ -126,6 +126,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var Icons = function () {
+  var nameIcon = function nameIcon() {
+    return "\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"18\"\n      height=\"18\"\n      fill=\"#8e99af\"\n      class=\"bi bi-person-bounding-box\"\n      viewBox=\"0 0 16 16\"\n    >\n      <path\n      d=\"M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z\"\n      />\n      <path\n        d=\"M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z\"\n      />\n    </svg>\n  ";
+  };
+
+  var mailIcon = function mailIcon() {
+    return "\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"18\"\n      height=\"18\"\n      fill=\"#8e99af\"\n      class=\"bi bi-envelope-fill\"\n      viewBox=\"0 0 16 16\"\n      >\n      <path\n      d=\"M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z\"\n      />\n      </svg>\n  ";
+  };
+
+  var passwordIcon = function passwordIcon() {
+    return "\n    <svg\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"18\"\n      height=\"18\"\n      fill=\"#8e99af\"\n      class=\"bi bi-eye-fill\"\n      viewBox=\"0 0 16 16\"\n      >\n      <path d=\"M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z\" />\n      <path\n      d=\"M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"\n      />\n      </svg>\n  ";
+  };
+
   var validInput = function validInput() {
     return "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" fill=\"#43aa8b\" class=\"bi bi-check-circle\" viewBox=\"0 0 16 16\">\n      <path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"/>\n      <path d=\"M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z\"/>\n    </svg>\n  ";
   };
@@ -135,6 +147,9 @@ var Icons = function () {
   };
 
   return {
+    nameIcon: nameIcon,
+    mailIcon: mailIcon,
+    passwordIcon: passwordIcon,
     validInput: validInput,
     invalidInput: invalidInput
   };
@@ -154,6 +169,14 @@ var FormValidation = function () {
   var inputs = Array.from(document.querySelectorAll('input'));
   var firstName = document.getElementById('firstName');
   var firstNameError = document.querySelector('#firstName + span.error');
+  var lastName = document.getElementById('lastName');
+  var lastNameError = document.querySelector('#lastName + span.error');
+  var mail = document.getElementById('email');
+  var mailError = document.querySelector('#email + span.error');
+  var password = document.getElementById('password');
+  var passwordError = document.querySelector('#password + span.error');
+  var inputsForm = [firstName, lastName, mail, password];
+  var formSpanError = [firstNameError, lastNameError, mailError, passwordError];
 
   var wrapperEffectOnInputFocus = function wrapperEffectOnInputFocus() {
     inputs.forEach(function (input) {
@@ -168,49 +191,80 @@ var FormValidation = function () {
   };
 
   var showError = function showError(element, display) {
-    if (element.id === 'firstName') {
-      if (element.validity.valueMissing) {
-        display.textContent = 'first name required';
-      } else if (element.validity.tooShort) {
-        display.textContent = "must be longer than ".concat(element.minLength);
-      }
+    var errorDisplay = display;
+    var labelContent = element.previousElementSibling.textContent;
+
+    if (element.validity.valueMissing) {
+      errorDisplay.textContent = "".concat(labelContent, " is required");
+    } else if (element.validity.tooShort) {
+      errorDisplay.textContent = "Must be longer than ".concat(element.minLength);
+    } else if (element.validity.typeMismatch) {
+      errorDisplay.textContent = 'Enter a valid email adress';
     }
   };
 
-  var firstNameInputValidity = function firstNameInputValidity() {
+  var checkInputValidity = function checkInputValidity() {
     var validInput = _iconSvg.default.validInput,
         invalidInput = _iconSvg.default.invalidInput;
-    firstName.addEventListener('input', function () {
-      if (firstName.validity.valid) {
-        firstNameError.textContent = '';
-        firstNameError.className = 'error';
-        firstName.parentNode.parentNode.children[1].innerHTML = "".concat(validInput());
-      } else {
-        firstName.parentNode.parentNode.children[1].innerHTML = "".concat(invalidInput());
-        showError(firstName, firstNameError);
-      }
+    inputsForm.forEach(function (input) {
+      input.addEventListener('input', function () {
+        if (input.validity.valid) {
+          input.nextElementSibling.textContent = '';
+          input.nextElementSibling.className = 'error';
+          input.parentNode.parentNode.children[1].innerHTML = "".concat(validInput());
+        } else {
+          input.parentNode.parentNode.children[1].innerHTML = "".concat(invalidInput());
+          showError(input, input.nextElementSibling);
+        }
+      });
     });
   };
 
+  var resetSpansError = function resetSpansError() {
+    formSpanError.forEach(function (span) {
+      var displayError = span;
+      displayError.textContent = '';
+      displayError.className = 'error';
+    });
+  };
+
+  var resetIconInput = function resetIconInput() {
+    var nameIcon = _iconSvg.default.nameIcon,
+        mailIcon = _iconSvg.default.mailIcon,
+        passwordIcon = _iconSvg.default.passwordIcon;
+    firstName.parentNode.parentNode.children[1].innerHTML = "".concat(nameIcon());
+    lastName.parentNode.parentNode.children[1].innerHTML = "".concat(nameIcon());
+    mail.parentNode.parentNode.children[1].innerHTML = "".concat(mailIcon());
+    password.parentNode.parentNode.children[1].innerHTML = "".concat(passwordIcon());
+  };
+
   var formListener = function formListener() {
+    checkInputValidity();
     form.addEventListener('submit', function (e) {
-      if (!firstName.validity.valid) {
-        showError(firstName, firstNameError);
-        e.preventDefault();
-      }
+      inputsForm.forEach(function (input) {
+        if (!input.validity.valid) {
+          showError(input, input.nextElementSibling);
+          e.preventDefault();
+        } else {
+          alert('You are a new member ! Congrats :)');
+          form.reset();
+        }
+      });
+      resetSpansError();
+      resetIconInput();
     });
   };
 
   return {
     wrapperEffectOnInputFocus: wrapperEffectOnInputFocus,
-    firstNameInputValidity: firstNameInputValidity,
     formListener: formListener
   };
 }();
 
-FormValidation.wrapperEffectOnInputFocus();
-FormValidation.firstNameInputValidity();
-FormValidation.formListener();
+window.onload = function () {
+  FormValidation.wrapperEffectOnInputFocus();
+  FormValidation.formListener();
+};
 },{"./utilities/iconSvg":"utilities/iconSvg.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -239,7 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53991" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55368" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
