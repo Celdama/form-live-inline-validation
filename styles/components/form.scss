@@ -22,6 +22,9 @@
 
         .first-name-content-form,
         .last-name-content-form {
+          display: flex;
+          flex-direction: column;
+
           label {
             font-size: $font-size-label;
             color: $color-gray-nav;

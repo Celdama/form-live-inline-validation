@@ -18,6 +18,19 @@ a {
   color: #4780ef !important;
 }
 
+.error {
+  width: 100%;
+  padding: 0;
+  font-size: 80%;
+  color: red;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
 #app {
   display: flex;
   justify-content: center;
@@ -76,6 +89,13 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 47%;
+}
+.form form .full-name-wrapper .first-name-wrapper .first-name-content-form,
+.form form .full-name-wrapper .first-name-wrapper .last-name-content-form,
+.form form .full-name-wrapper .last-name-wrapper .first-name-content-form,
+.form form .full-name-wrapper .last-name-wrapper .last-name-content-form {
+  display: flex;
+  flex-direction: column;
 }
 .form form .full-name-wrapper .first-name-wrapper .first-name-content-form label,
 .form form .full-name-wrapper .first-name-wrapper .last-name-content-form label,

@@ -36,12 +36,14 @@
               </p>
             </div>
             <div class="form">
-              <form action="#">
+              <form action="#" novalidate>
                 <div class="full-name-wrapper">
                   <div class="first-name-wrapper">
                     <div class="first-name-content-form">
                       <label for="firstName">First name</label>
-                      <input type="text" name="firstName" id="firstName" />
+                      <input type="text" name="firstName" id="firstName" required minlength="2"/>
+                      <span class="error" aria-live="polite"></span>
+
                     </div>
                     <div class="first-name-icon">
                       <svg
@@ -60,11 +62,14 @@
                         />
                       </svg>
                     </div>
+                    
                   </div>
                   <div class="last-name-wrapper">
                     <div class="last-name-content-form">
                       <label for="lastName">Last name</label>
                       <input type="text" name="lastName" id="lastName" />
+                      <span  class="error" aria-live="polite"></span>
+
                     </div>
                     <div class="last-name-icon">
                       <svg

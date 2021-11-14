@@ -119,7 +119,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"index.js":[function(require,module,exports) {
 var FormValidation = function () {
+  var form = document.querySelector('form');
   var inputs = Array.from(document.querySelectorAll('input'));
+  var firstName = document.getElementById('firstName');
+  var firstNameError = document.querySelector('#firstName + span.error');
 
   var wrapperEffectOnInputFocus = function wrapperEffectOnInputFocus() {
     inputs.forEach(function (input) {
@@ -133,12 +136,46 @@ var FormValidation = function () {
     });
   };
 
+  var showError = function showError(element, display) {
+    if (element.id === 'firstName') {
+      if (element.validity.valueMissing) {
+        display.textContent = 'first name required';
+      } else if (element.validity.tooShort) {
+        display.textContent = "must be longer than ".concat(element.minLength);
+      }
+    }
+  };
+
+  var firstNameInputValidity = function firstNameInputValidity() {
+    firstName.addEventListener('input', function () {
+      if (firstName.validity.valid) {
+        firstNameError.textContent = '';
+        firstNameError.className = 'error';
+      } else {
+        showError(firstName, firstNameError);
+      }
+    });
+  };
+
+  var formListener = function formListener() {
+    form.addEventListener('submit', function (e) {
+      if (!firstName.validity.valid) {
+        showError(firstName, firstNameError);
+        e.preventDefault();
+      }
+    });
+  };
+
   return {
-    wrapperEffectOnInputFocus: wrapperEffectOnInputFocus
+    wrapperEffectOnInputFocus: wrapperEffectOnInputFocus,
+    firstNameInputValidity: firstNameInputValidity,
+    formListener: formListener
   };
 }();
 
 FormValidation.wrapperEffectOnInputFocus();
+FormValidation.firstNameInputValidity();
+FormValidation.formListener();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

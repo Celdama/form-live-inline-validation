@@ -34,12 +34,14 @@
               </p>
             </div>
             <div class="form">
-              <form action="#">
+              <form action="#" novalidate="">
                 <div class="full-name-wrapper">
                   <div class="first-name-wrapper">
                     <div class="first-name-content-form">
                       <label for="firstName">First name</label>
-                      <input type="text" name="firstName" id="firstName">
+                      <input type="text" name="firstName" id="firstName" required="" minlength="2">
+                      <span class="error" aria-live="polite"></span>
+
                     </div>
                     <div class="first-name-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#8e99af" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
@@ -47,11 +49,14 @@
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
                       </svg>
                     </div>
+                    
                   </div>
                   <div class="last-name-wrapper">
                     <div class="last-name-content-form">
                       <label for="lastName">Last name</label>
                       <input type="text" name="lastName" id="lastName">
+                      <span class="error" aria-live="polite"></span>
+
                     </div>
                     <div class="last-name-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#8e99af" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
