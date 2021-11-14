@@ -123,12 +123,12 @@ var FormValidation = function () {
 
   var wrapperEffectOnInputFocus = function wrapperEffectOnInputFocus() {
     inputs.forEach(function (input) {
-      input.addEventListener('focus', function () {
-        input.parentNode.parentNode.classList.add('focus');
-        console.log(input.parentNode.parentNode);
+      var wrapper = input.parentNode.parentNode;
+      input.addEventListener('focusin', function () {
+        wrapper.classList.add('focus');
       });
       input.addEventListener('focusout', function () {
-        input.parentNode.parentNode.classList.remove('focus');
+        wrapper.classList.remove('focus');
       });
     });
   };

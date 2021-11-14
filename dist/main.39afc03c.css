@@ -11,7 +11,7 @@ a {
 
 .focus {
   outline: 2px solid #4780ef;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px #4780ef;
   background-color: #fff !important;
 }
 .focus label {

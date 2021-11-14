@@ -3,13 +3,14 @@ const FormValidation = (() => {
 
   const wrapperEffectOnInputFocus = () => {
     inputs.forEach((input) => {
-      input.addEventListener('focus', () => {
-        input.parentNode.parentNode.classList.add('focus');
-        console.log(input.parentNode.parentNode);
+      const wrapper = input.parentNode.parentNode;
+
+      input.addEventListener('focusin', () => {
+        wrapper.classList.add('focus');
       });
 
       input.addEventListener('focusout', () => {
-        input.parentNode.parentNode.classList.remove('focus');
+        wrapper.classList.remove('focus');
       });
     });
   };
